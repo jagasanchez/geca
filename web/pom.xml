@@ -24,19 +24,16 @@
       </plugin>
     </plugins>
   </build>
+  <dependencies>
+  	<dependency>
+  		<groupId>org.apache.wicket</groupId>
+  		<artifactId>wicket-core</artifactId>
+  		<version>7.0.0</version>
+  	</dependency>
+  </dependencies>
   <parent>
   	<groupId>org.jag</groupId>
   	<artifactId>geca</artifactId>
   	<version>0.0.1-SNAPSHOT</version>
   </parent>
-  <dependencyManagement>
-  	<dependencies>
-  		<dependency>
-  			<groupId>org.jag.geca</groupId>
-  			<artifactId>ejb</artifactId>
-  			<version>0.0.1-SNAPSHOT</version>
-  			<type>ejb</type>
-  		</dependency>
-  	</dependencies>
-  </dependencyManagement>
 </project>
