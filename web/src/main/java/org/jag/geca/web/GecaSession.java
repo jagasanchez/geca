@@ -3,6 +3,8 @@
  */
 package org.jag.geca.web;
 
+import java.util.Locale;
+
 import org.apache.wicket.protocol.http.WebSession;
 import org.apache.wicket.request.Request;
 
@@ -15,5 +17,6 @@ public class GecaSession extends WebSession {
 
     public GecaSession(final Request request) {
         super(request);
+        setLocale(new Locale("es", "ES"));
     }
 }
