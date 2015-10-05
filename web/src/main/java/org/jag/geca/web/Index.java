@@ -54,9 +54,12 @@ public class Index extends WebPage {
         programas.add(new ProgramaBuilder().withFechaInicio(LocalDate.of(2015, 10, 16))
                 .withFechaFin(LocalDate.of(2015, 10, 18)).withNombre("Fin de semana en Viena")
                 .withMoney(BigDecimal.valueOf(200), "EUR").newInstance());
-        programas.add(new ProgramaBuilder().withFechaFin(LocalDate.of(2015, 10, 23))
+        programas.add(new ProgramaBuilder().withFechaInicio(LocalDate.of(2015, 10, 23))
                 .withFechaFin(LocalDate.of(2015, 10, 25)).withNombre("Fin de semana en Madrid")
-                .withMoney(BigDecimal.valueOf(200.0d), "EUR").newInstance());
+                .withMoney(BigDecimal.valueOf(200.01), "EUR").newInstance());
+        programas.add(new ProgramaBuilder().withFechaInicio(LocalDate.of(2015, 11, 13))
+                .withFechaFin(LocalDate.of(2015, 11, 15)).withNombre("Fin de semana en París")
+                .withMoney(BigDecimal.valueOf(1234.56), "EUR").newInstance());
         return programas;
     }
 
