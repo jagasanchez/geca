@@ -2,7 +2,6 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.jag.geca</groupId>
   <artifactId>ejb</artifactId>
-  <packaging>ejb</packaging>
   <build>
     <sourceDirectory>ejbModule</sourceDirectory>
     <resources>
@@ -48,4 +47,5 @@
   		<version>1.0</version>
   	</dependency>
   </dependencies>
+  <packaging>ejb</packaging>
 </project>

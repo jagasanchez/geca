@@ -8,6 +8,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.money.MonetaryAmount;
 import javax.persistence.CollectionTable;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
@@ -26,6 +27,7 @@ public class Programa implements Serializable {
     private String name;
     private LocalDate begin;
     private LocalDate end;
+    private MonetaryAmount money;
 
     @ElementCollection
     @CollectionTable
@@ -53,5 +55,13 @@ public class Programa implements Serializable {
 
     public void setEnd(final LocalDate end) {
         this.end = end;
+    }
+
+    public MonetaryAmount getMoney() {
+        return money;
+    }
+
+    public void setMoney(final MonetaryAmount money) {
+        this.money = money;
     }
 }
