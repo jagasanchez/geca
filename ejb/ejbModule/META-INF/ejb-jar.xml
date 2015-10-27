@@ -1,4 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ejb-jar id="ejb-jar_ID" version="2.1" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/ejb-jar_2_1.xsd">
+<ejb-jar id="ejb-jar_ID" version="2.1"
+	xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/ejb-jar_2_1.xsd">
 	<display-name>geca-ejb</display-name>
+	<enterprise-beans>
+		<entity>
+			<description>Programa</description>
+			<display-name>Programa</display-name>
+			<ejb-name>Programa</ejb-name>
+			<ejb-class>org.jag.geca.model.Programa</ejb-class>
+			<persistence-type>Bean</persistence-type>
+			<prim-key-class></prim-key-class>
+			<reentrant>true</reentrant>
+		</entity>
+	</enterprise-beans>
 </ejb-jar>

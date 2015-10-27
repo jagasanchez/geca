@@ -29,7 +29,8 @@ public class Index extends WebPage {
     private static final Logger LOGGER = LoggerFactory.getLogger(Index.class);
 
     public Index() {
-        add(new ListView<Programa>("programas", getProgramas()) {
+        final List<Programa> programas = getProgramas();
+        add(new ListView<Programa>("programas", programas) {
             private static final long serialVersionUID = -3614296798789961770L;
 
             @Override
@@ -55,8 +56,8 @@ public class Index extends WebPage {
                 .withFechaFin(LocalDate.of(2015, 10, 18)).withNombre("Fin de semana en Viena")
                 .withMoney(BigDecimal.valueOf(200), "EUR").newInstance());
         programas.add(new ProgramaBuilder().withFechaInicio(LocalDate.of(2015, 10, 23))
-                .withFechaFin(LocalDate.of(2015, 10, 25)).withNombre("Fin de semana en Madrid")
-                .withMoney(BigDecimal.valueOf(200.01), "EUR").newInstance());
+                .withFechaFin(LocalDate.of(2015, 10, 25)).withNombre("Fin de semana en Madrid").withMoney(null)
+                .newInstance());
         programas.add(new ProgramaBuilder().withFechaInicio(LocalDate.of(2015, 11, 13))
                 .withFechaFin(LocalDate.of(2015, 11, 15)).withNombre("Fin de semana en París")
                 .withMoney(BigDecimal.valueOf(1234.56), "EUR").newInstance());

@@ -37,7 +37,7 @@ public class MonetaryAmountConverter implements IConverter<MonetaryAmount> {
     private static class NumberFormatter implements Formatter {
 
         @Override
-        public String convertToString(MonetaryAmount monetaryAmount, Locale locale) {
+        public String convertToString(final MonetaryAmount monetaryAmount, final Locale locale) {
             final NumberFormat formatter = NumberFormat.getNumberInstance(locale);
             formatter.setMaximumFractionDigits(2);
             formatter.setMinimumFractionDigits(2);
@@ -53,7 +53,7 @@ public class MonetaryAmountConverter implements IConverter<MonetaryAmount> {
     private static class CurrencyFormatter implements Formatter {
 
         @Override
-        public String convertToString(MonetaryAmount monetaryAmount, Locale locale) {
+        public String convertToString(final MonetaryAmount monetaryAmount, final Locale locale) {
             final NumberFormat formatter = NumberFormat.getCurrencyInstance(locale);
             formatter.setMaximumFractionDigits(2);
             formatter.setMinimumFractionDigits(2);
