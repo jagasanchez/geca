@@ -11,10 +11,9 @@ import javax.persistence.Entity;
 
 /**
  * @author jose
- *
  */
 @Entity
-public class LineaPrograma implements Serializable {
+public class ProgramLine implements Serializable {
     private static final long serialVersionUID = 8624144506616336091L;
 
     private LocalDate date;

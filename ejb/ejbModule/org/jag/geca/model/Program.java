@@ -14,12 +14,13 @@ import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
+import org.jag.geca.model.ProgramLine;
+
 /**
  * @author jose
  */
-
 @Entity
-public class Programa implements Serializable {
+public class Program implements Serializable {
     private static final long serialVersionUID = -731725373003891201L;
 
     @Id
@@ -31,7 +32,7 @@ public class Programa implements Serializable {
 
     @ElementCollection
     @CollectionTable
-    private List<LineaPrograma> lineas = new ArrayList<>();
+    private List<ProgramLine> lineas = new ArrayList<>();
 
     public String getName() {
         return name;
