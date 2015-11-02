@@ -13,9 +13,15 @@
 	<name>GECA</name>
 
 	<modules>
+		<module>jpa</module>
 		<module>ejb</module>
 		<module>web</module>
 	</modules>
+
+	<properties>
+		<maven_compile_source>1.7</maven_compile_source>
+		<maven_compile_target>1.7</maven_compile_target>
+	</properties>
 
 	<dependencies>
 		<!-- -->
@@ -32,11 +38,6 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>org.javamoney</groupId>
-			<artifactId>moneta</artifactId>
-			<version>1.0</version>
-		</dependency>
-		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
 			<version>1.7.12</version>
@@ -45,6 +46,26 @@
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-simple</artifactId>
 			<version>1.7.12</version>
+		</dependency>
+		<dependency>
+			<groupId>joda-time</groupId>
+			<artifactId>joda-time</artifactId>
+			<version>2.9</version>
+		</dependency>
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-api</artifactId>
+			<version>7.0</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.money</groupId>
+			<artifactId>money-api</artifactId>
+			<version>1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.javamoney</groupId>
+			<artifactId>moneta</artifactId>
+			<version>1.0</version>
 		</dependency>
 	</dependencies>
 

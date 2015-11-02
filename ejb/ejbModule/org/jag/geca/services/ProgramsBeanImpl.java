@@ -1,11 +1,12 @@
 /*
- * (c) 2015 - Jose A. Garcia Sanchez 
+ * (c) 2015 - Jose A. Garcia Sanchez
  */
 package org.jag.geca.services;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.List;
 
 import javax.money.Monetary;
@@ -13,6 +14,7 @@ import javax.persistence.Entity;
 
 import org.jag.geca.model.Program;
 import org.javamoney.moneta.Money;
+import org.joda.time.LocalDate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -26,7 +28,7 @@ public class ProgramsBeanImpl implements ProgramsBean {
 
     /*
      * (non-Javadoc)
-     * 
+     *
      * @see org.jag.geca.services.ProgramsBean#getPrograms()
      */
     @Override
@@ -34,17 +36,17 @@ public class ProgramsBeanImpl implements ProgramsBean {
         LOGGER.info("getPrograms()");
         final List<Program> programs = new ArrayList<>();
 
-        programs.add(new ProgramaBuilder().withFechaInicio(LocalDate.of(2015, 8, 28))
-                .withFechaFin(LocalDate.of(2015, 8, 30)).withNombre("Boda de Joan Ramón y Carolin")
+        programs.add(new ProgramaBuilder().withFechaInicio(2015, Calendar.AUGUST, 28)
+                .withFechaFin(2015, Calendar.AUGUST, 30).withNombre("Boda de Joan Ramón y Carolin")
                 .withMoney(BigDecimal.valueOf(12.34), "EUR").newInstance());
-        programs.add(new ProgramaBuilder().withFechaInicio(LocalDate.of(2015, 10, 16))
-                .withFechaFin(LocalDate.of(2015, 10, 18)).withNombre("Fin de semana en Viena")
+        programs.add(new ProgramaBuilder().withFechaInicio(2015, Calendar.OCTOBER, 16)
+                .withFechaFin(2015, Calendar.OCTOBER, 18).withNombre("Fin de semana en Viena")
                 .withMoney(BigDecimal.valueOf(200), "EUR").newInstance());
-        programs.add(new ProgramaBuilder().withFechaInicio(LocalDate.of(2015, 10, 23))
-                .withFechaFin(LocalDate.of(2015, 10, 25)).withNombre("Fin de semana en Madrid").withMoney(null)
+        programs.add(new ProgramaBuilder().withFechaInicio(2015, Calendar.OCTOBER, 23)
+                .withFechaFin(2015, Calendar.OCTOBER, 25).withNombre("Fin de semana en Madrid").withMoney(null)
                 .newInstance());
-        programs.add(new ProgramaBuilder().withFechaInicio(LocalDate.of(2015, 11, 13))
-                .withFechaFin(LocalDate.of(2015, 11, 15)).withNombre("Fin de semana en París")
+        programs.add(new ProgramaBuilder().withFechaInicio(2015, Calendar.NOVEMBER, 13)
+                .withFechaFin(2015, Calendar.NOVEMBER, 15).withNombre("Fin de semana en París")
                 .withMoney(BigDecimal.valueOf(1234.56), "EUR").newInstance());
 
         LOGGER.info("programs: [{}]", programs);
@@ -72,12 +74,14 @@ public class ProgramsBeanImpl implements ProgramsBean {
             return this;
         }
 
-        public ProgramaBuilder withFechaInicio(final LocalDate date) {
+        public ProgramaBuilder withFechaInicio(final int year, final int month, final int dayOfMonth) {
+            final LocalDate date = LocalDate.fromCalendarFields(new GregorianCalendar(year, month, dayOfMonth));
             programa.setBegin(date);
             return this;
         }
 
-        public ProgramaBuilder withFechaFin(final LocalDate date) {
+        public ProgramaBuilder withFechaFin(final int year, final int month, final int dayOfMonth) {
+            final LocalDate date = LocalDate.fromCalendarFields(new GregorianCalendar(year, month, dayOfMonth));
             programa.setEnd(date);
             return this;
         }

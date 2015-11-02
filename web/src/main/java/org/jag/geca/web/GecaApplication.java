@@ -3,8 +3,6 @@
  */
 package org.jag.geca.web;
 
-import java.time.LocalDate;
-
 import org.apache.wicket.ConverterLocator;
 import org.apache.wicket.IConverterLocator;
 import org.apache.wicket.Page;
@@ -15,6 +13,7 @@ import org.apache.wicket.request.Response;
 import org.jag.geca.web.convert.LocalDateConverter;
 import org.jag.geca.web.convert.MonetaryAmountConverter;
 import org.javamoney.moneta.Money;
+import org.joda.time.LocalDate;
 
 /**
  * @author jose
@@ -38,7 +37,7 @@ public class GecaApplication extends WebApplication {
 
     /*
      * (non-Javadoc)
-     * 
+     *
      * @see org.apache.wicket.Application#newConverterLocator()
      */
     @Override
