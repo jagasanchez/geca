@@ -14,6 +14,7 @@ import org.jag.geca.web.convert.LocalDateConverter;
 import org.jag.geca.web.convert.MonetaryAmountConverter;
 import org.javamoney.moneta.Money;
 import org.joda.time.LocalDate;
+import org.wicketstuff.javaee.injection.JavaEEComponentInjector;
 
 /**
  * @author jose
@@ -23,6 +24,8 @@ public class GecaApplication extends WebApplication {
     @Override
     protected void init() {
         super.init();
+
+        getComponentInstantiationListeners().add(new JavaEEComponentInjector(this));
     }
 
     @Override

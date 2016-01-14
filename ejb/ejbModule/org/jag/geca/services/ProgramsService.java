@@ -5,12 +5,15 @@ package org.jag.geca.services;
 
 import java.util.List;
 
+import javax.ejb.Remote;
+
 import org.jag.geca.model.Program;
 
 /**
  * @author jose
  */
-public interface ProgramsBean {
+@Remote
+public interface ProgramsService {
 
     /**
      * @return List of programs
