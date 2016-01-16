@@ -48,6 +48,17 @@
 			<groupId>org.jag.geca</groupId>
 			<artifactId>jpa</artifactId>
 			<version>${project.version}</version>
+			<type>jar</type>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.wicket</groupId>
+			<artifactId>wicket-cdi</artifactId>
+			<version>7.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jboss.seam.conversation</groupId>
+			<artifactId>seam-conversation-weld</artifactId>
+			<version>3.0.0.Final</version>
 		</dependency>
 	</dependencies>
 

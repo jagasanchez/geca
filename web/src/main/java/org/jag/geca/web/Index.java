@@ -75,6 +75,7 @@ public class Index extends WebPage {
     protected void onInitialize() {
         super.onInitialize();
         LOGGER.info("onInitialize(): programService: [{}]", programsService);
-        // LOGGER.info("[programas] = [{}]", programsService.getPrograms().size());
+        LOGGER.info("onInitialize(); programas: [{}]", programsService.getPrograms());
+        LOGGER.info("[programas] = [{}]", programsService.getPrograms().size());
     }
 }

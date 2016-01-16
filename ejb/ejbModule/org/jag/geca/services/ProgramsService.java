@@ -5,14 +5,14 @@ package org.jag.geca.services;
 
 import java.util.List;
 
-import javax.ejb.Remote;
+import javax.ejb.Local;
 
 import org.jag.geca.model.Program;
 
 /**
  * @author jose
  */
-@Remote
+@Local
 public interface ProgramsService {
 
     /**
