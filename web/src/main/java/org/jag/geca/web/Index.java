@@ -3,18 +3,20 @@
  */
 package org.jag.geca.web;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.inject.Inject;
+import javax.ejb.EJB;
 
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.list.ListItem;
 import org.apache.wicket.markup.html.list.ListView;
+import org.apache.wicket.model.CompoundPropertyModel;
+import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.Model;
+import org.apache.wicket.model.PropertyModel;
 import org.jag.geca.model.Program;
+import org.jag.geca.model.taxdeclaration.Vacation;
 import org.jag.geca.services.ProgramsService;
+import org.jag.geca.services.TaxDeclaration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -24,22 +26,10 @@ import org.slf4j.LoggerFactory;
 public class Index extends WebPage {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(Index.class);
-    @Inject
+    @EJB
     private ProgramsService programsService;
-
-    public Index() {
-        final Model<? extends List<Program>> model = new Model<ArrayList<Program>>(new ArrayList<Program>());
-        add(new ListView<Program>("programas", model) {
-
-            @Override
-            protected void populateItem(final ListItem<Program> item) {
-                item.add(new Label("begin"));
-                item.add(new Label("end"));
-                item.add(new Label("name"));
-                item.add(new Label("money"));
-            }
-        });
-    }
+    @EJB
+    private TaxDeclaration taxDeclaration;
 
     public void setProgramsService(final ProgramsService programsService) {
         this.programsService = programsService;
@@ -52,6 +42,7 @@ public class Index extends WebPage {
      */
     @Override
     protected void onRender() {
+        LOGGER.debug("onRender()");
         super.onRender();
         // final List<Program> programas = programsService.getPrograms();
         // add(new ListView<Program>("programas", programas) {
@@ -68,14 +59,33 @@ public class Index extends WebPage {
         // item.add(new Label("money"));
         // }
         // });
-        LOGGER.info("onRender(): programService: [{}]", programsService);
     }
 
     @Override
     protected void onInitialize() {
+        LOGGER.debug("onInitialize()");
         super.onInitialize();
-        LOGGER.info("onInitialize(): programService: [{}]", programsService);
-        LOGGER.info("onInitialize(); programas: [{}]", programsService.getPrograms());
-        LOGGER.info("[programas] = [{}]", programsService.getPrograms().size());
+
+        add(new ListView<Program>("programas", Model.ofList(programsService.getPrograms())) {
+
+            @Override
+            protected void populateItem(final ListItem<Program> item) {
+                final IModel<Program> program = item.getModel();
+                item.add(new Label("begin", new PropertyModel<>(program, "begin")));
+                item.add(new Label("end", new PropertyModel<>(program, "end")));
+                item.add(new Label("name", new PropertyModel<>(program, "name")));
+                item.add(new Label("money", new PropertyModel<>(program, "money")));
+            }
+        });
+
+        add(new ListView<Vacation>("vacations", Model.ofList(taxDeclaration.getVacations(2014))) {
+
+            @Override
+            protected void populateItem(final ListItem<Vacation> item) {
+                item.setModel(new CompoundPropertyModel<>(item.getModelObject()));
+                item.add(new Label("date"));
+            }
+
+        });
     }
 }

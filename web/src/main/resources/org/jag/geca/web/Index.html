@@ -13,18 +13,46 @@
 			<div id="content">
 				<table>
 					<thead>
-						<tr><th>Fecha inicio</th><th>Fecha fin</th><th>Nombre</th><th>Importe</th></tr>
+						<tr>
+							<th>Fecha inicio</th>
+							<th>Fecha fin</th>
+							<th>Nombre</th>
+							<th>Importe</th>
+						</tr>
 					</thead>
 					<tbody>
 						<tr wicket:id="programas" class="programa">
 							<td class="fecha"><span wicket:id="begin">28/ago/2015</span></td>
 							<td class="fecha"><span wicket:id="end">30/ago/2015</span></td>
-							<td><span wicket:id="name">Boda de Joan Ramón y Carolin</span></td>
+							<td><span wicket:id="name">Boda de Joan Ramón y
+									Carolin</span></td>
 							<td class="importe"><span wicket:id="money">205,34 €</span></td>
 						</tr>
 						<wicket:remove>
-						<tr><td>28/ago/2015</td><td>30/ago/2015</td><td>Boda de Joan Ramón y Carolin</td><td>205,34 €</td></tr>
+							<tr>
+								<td>28/ago/2015</td>
+								<td>30/ago/2015</td>
+								<td>Boda de Joan Ramón y Carolin</td>
+								<td>205,34 €</td>
+							</tr>
 						</wicket:remove>
+					</tbody>
+				</table>
+				<table>
+					<thead>
+						<tr>
+							<th>Day</th>
+						</tr>
+					</thead>
+					<tbody>
+					<tr wicket:id="vacations">
+						<td class="fecha"><span wicket:id="date"></span></td>
+					</tr>
+					<wicket:remove>
+					<tr>
+						<td class="fecha">12/ene/2014</td>
+					</tr>
+					</wicket:remove>
 					</tbody>
 				</table>
 			</div>

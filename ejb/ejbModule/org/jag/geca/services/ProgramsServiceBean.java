@@ -25,10 +25,6 @@ import org.slf4j.LoggerFactory;
 public class ProgramsServiceBean implements ProgramsService {
     private static final Logger LOGGER = LoggerFactory.getLogger(ProgramsServiceBean.class);
 
-    public ProgramsServiceBean() {
-        LOGGER.info("ProgramsServiceBean");
-    }
-
     /*
      * (non-Javadoc)
      *
@@ -36,7 +32,7 @@ public class ProgramsServiceBean implements ProgramsService {
      */
     @Override
     public List<Program> getPrograms() {
-        LOGGER.info("getPrograms()");
+        LOGGER.debug("getPrograms()");
         final List<Program> programs = new ArrayList<>();
 
         programs.add(new ProgramaBuilder().withFechaInicio(2015, Calendar.AUGUST, 28)
