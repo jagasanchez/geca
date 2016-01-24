@@ -1,0 +1,12 @@
+@CHARSET "UTF-8";
+body {
+	padding-top: 70px;
+}
+
+.fecha {
+	text-align: center;
+}
+
+.importe {
+	text-align: right;
+}

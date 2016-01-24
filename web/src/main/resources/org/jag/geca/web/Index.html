@@ -2,61 +2,52 @@
 <html xmlns:wicket="http://wicket.apache.org">
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/bootstrap-theme.min.css" rel="stylesheet">
+
+<script type="text/javascript" src="js/jquery-2.0.0.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="css/geca.css">
 <title>GECA</title>
-<link href="style.css" rel="stylesheet">
 </head>
 <body>
-	<div id="container">
-		<div id="header">[..Header..]</div>
-		<div id="main">
-			<div id="menu">[..Menu..]</div>
-			<div id="content">
-				<table>
-					<thead>
-						<tr>
-							<th>Fecha inicio</th>
-							<th>Fecha fin</th>
-							<th>Nombre</th>
-							<th>Importe</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr wicket:id="programas" class="programa">
-							<td class="fecha"><span wicket:id="begin">28/ago/2015</span></td>
-							<td class="fecha"><span wicket:id="end">30/ago/2015</span></td>
-							<td><span wicket:id="name">Boda de Joan Ramón y
-									Carolin</span></td>
-							<td class="importe"><span wicket:id="money">205,34 €</span></td>
-						</tr>
-						<wicket:remove>
-							<tr>
-								<td>28/ago/2015</td>
-								<td>30/ago/2015</td>
-								<td>Boda de Joan Ramón y Carolin</td>
-								<td>205,34 €</td>
-							</tr>
-						</wicket:remove>
-					</tbody>
-				</table>
-				<table>
-					<thead>
-						<tr>
-							<th>Day</th>
-						</tr>
-					</thead>
-					<tbody>
-					<tr wicket:id="vacations">
-						<td class="fecha"><span wicket:id="date"></span></td>
-					</tr>
-					<wicket:remove>
-					<tr>
-						<td class="fecha">12/ene/2014</td>
-					</tr>
-					</wicket:remove>
-					</tbody>
-				</table>
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#"><wicket:message
+						key="application.brand">[[GECA]]</wicket:message></a>
+
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+
+			</div>
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav nav-tabs">
+					<li class="dropdown" role="presentation"><a
+						class="dropdown-toggle" data-toggle="dropdown" href="#"
+						role="button" aria-haspopup="true" aria-expanded="false"> Tax
+							Declaration <span class="caret"></span>
+					</a>
+						<ul class="dropdown-menu">
+							<li><a href="#">Vacations</a></li>
+							<li><a href="#">Public Transport</a></li>
+						</ul></li>
+				</ul>
 			</div>
 		</div>
+	</nav>
+	<div class="container">
+		<div wicket:id="programsPanel"></div>
+		<div wicket:id="vacationsPanel"></div>
 	</div>
 </body>
 </html>

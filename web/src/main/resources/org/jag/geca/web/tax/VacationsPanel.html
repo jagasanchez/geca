@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="">
+</head>
+<body>
+
+	<wicket:panel>
+		<!-- div class="container" -->
+			<div class="panel panel-default">
+				<table class="table">
+					<thead>
+						<tr>
+							<th><wicket:message key="date.label">[[Day]]</wicket:message></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr wicket:id="vacations">
+							<td><span wicket:id="date"></span></td>
+						</tr>
+						<wicket:remove>
+							<tr>
+								<td class="fecha">12/ene/2014</td>
+							</tr>
+							<tr>
+								<td class="fecha">12/ene/2014</td>
+							</tr>
+							<tr>
+								<td class="fecha">12/ene/2014</td>
+							</tr>
+							<tr>
+								<td class="fecha">12/ene/2014</td>
+							</tr>
+							<tr>
+								<td class="fecha">12/ene/2014</td>
+							</tr>
+						</wicket:remove>
+					</tbody>
+				</table>
+			</div>
+		<!-- /div -->
+	</wicket:panel>
+
+</body>
+</html>

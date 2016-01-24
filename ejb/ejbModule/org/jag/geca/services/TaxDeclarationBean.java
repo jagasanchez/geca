@@ -26,21 +26,48 @@ public class TaxDeclarationBean implements TaxDeclaration {
     private static final Map<Integer, List<Vacation>> allVacations = new HashMap<>();
 
     static {
-        final List<Vacation> vacations2014 = new ArrayList<>();
-        vacations2014.add(new Vacation()
-                .withVacation(LocalDate.fromCalendarFields(new GregorianCalendar(2014, Calendar.NOVEMBER, 13))));
-        vacations2014.add(new Vacation()
-                .withVacation(LocalDate.fromCalendarFields(new GregorianCalendar(2014, Calendar.DECEMBER, 24))));
-        vacations2014.add(new Vacation()
-                .withVacation(LocalDate.fromCalendarFields(new GregorianCalendar(2014, Calendar.DECEMBER, 28))));
-        vacations2014.add(new Vacation()
-                .withVacation(LocalDate.fromCalendarFields(new GregorianCalendar(2014, Calendar.DECEMBER, 29))));
-        vacations2014.add(new Vacation()
-                .withVacation(LocalDate.fromCalendarFields(new GregorianCalendar(2014, Calendar.DECEMBER, 30))));
-        vacations2014.add(new Vacation()
-                .withVacation(LocalDate.fromCalendarFields(new GregorianCalendar(2014, Calendar.DECEMBER, 31))));
 
-        allVacations.put(2014, vacations2014);
+        allVacations.put(2015, vacations2015());
+        allVacations.put(2016, vacations2016());
+    }
+
+    private static List<Vacation> vacations2015() {
+        final int year = 2015;
+        final List<Vacation> vacations = new ArrayList<>();
+        vacations.add(new Vacation()
+                .withVacation(LocalDate.fromCalendarFields(new GregorianCalendar(year, Calendar.NOVEMBER, 13))));
+        vacations.add(new Vacation()
+                .withVacation(LocalDate.fromCalendarFields(new GregorianCalendar(year, Calendar.DECEMBER, 24))));
+        vacations.add(new Vacation()
+                .withVacation(LocalDate.fromCalendarFields(new GregorianCalendar(year, Calendar.DECEMBER, 28))));
+        vacations.add(new Vacation()
+                .withVacation(LocalDate.fromCalendarFields(new GregorianCalendar(year, Calendar.DECEMBER, 29))));
+        vacations.add(new Vacation()
+                .withVacation(LocalDate.fromCalendarFields(new GregorianCalendar(year, Calendar.DECEMBER, 30))));
+        vacations.add(new Vacation()
+                .withVacation(LocalDate.fromCalendarFields(new GregorianCalendar(year, Calendar.DECEMBER, 31))));
+
+        return vacations;
+    }
+
+    private static List<Vacation> vacations2016() {
+        final int year = 2016;
+        final List<Vacation> vacations = new ArrayList<>();
+
+        vacations.add(new Vacation()
+                .withVacation(LocalDate.fromCalendarFields(new GregorianCalendar(year, Calendar.JANUARY, 4))));
+        vacations.add(new Vacation()
+                .withVacation(LocalDate.fromCalendarFields(new GregorianCalendar(year, Calendar.JANUARY, 5))));
+        vacations.add(new Vacation()
+                .withVacation(LocalDate.fromCalendarFields(new GregorianCalendar(year, Calendar.JANUARY, 7))));
+        vacations.add(new Vacation()
+                .withVacation(LocalDate.fromCalendarFields(new GregorianCalendar(year, Calendar.FEBRUARY, 1))));
+        vacations.add(new Vacation()
+                .withVacation(LocalDate.fromCalendarFields(new GregorianCalendar(year, Calendar.FEBRUARY, 2))));
+        vacations.add(new Vacation()
+                .withVacation(LocalDate.fromCalendarFields(new GregorianCalendar(year, Calendar.FEBRUARY, 3))));
+
+        return vacations;
     }
 
     @Override
